@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  gather_facts: yes
+  become: yes
+  roles:
+    - application
+- hosts: HAproxy
+  become: yes
+  roles:
+    - haproxy
+    - test
